@@ -9,8 +9,10 @@ import numpy as np
 # Config
 SAMPLE_RATE = 16000
 CHANNELS = 1
-OUTPUT_DIR = Path("//data/audio")
-CSV_FILE = Path("//data/transcripts.csv")
+BASE_DIR = Path(__file__).resolve().parent
+
+OUTPUT_DIR = BASE_DIR / "data" / "audio"
+CSV_FILE = BASE_DIR / "data" / "transcripts.csv"
 
 NUMBERS = ["zwei","drei","vier"]
 
@@ -86,7 +88,7 @@ def prepare_directories():
         CSV_FILE.parent.mkdir(parents=True, exist_ok=True)
         with open(CSV_FILE, "w", newline="", encoding="ISO-8859-1") as f:
             writer = csv.writer(f)
-            writer.writerow(["file", "text"])
+            writer.writerow(["file", "speaker", "text"])
 
 
 def get_next_filename():
@@ -95,10 +97,10 @@ def get_next_filename():
     return f"recording_{number}.wav"
 
 
-def save_transcript(filename, transcript):
+def save_transcript(filename, speaker_id, transcript):
     with open(CSV_FILE, "a", newline="", encoding="ISO-8859-1") as f:
         writer = csv.writer(f)
-        writer.writerow([filename, transcript])
+        writer.writerow([filename, speaker_id, transcript])
 
 
 # RECORD TRAINING DATA
@@ -143,6 +145,20 @@ def main():
     print("==============================")
     print(" Small STT Dataset Recorder")
     print("==============================")
+    print()
+
+    speaker_id = input(
+        "Enter speaker ID: "
+    ).strip()
+
+    while not speaker_id:
+        print("Speaker ID cannot be empty.")
+        speaker_id = input(
+            "Enter speaker ID: "
+        ).strip()
+
+    print()
+    print(f"Speaker: {speaker_id}")
     print()
 
     print(sd.query_devices())
@@ -200,6 +216,7 @@ def main():
 
         save_transcript(
             filename,
+            speaker_id,
             phrase
         )
 
