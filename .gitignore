@@ -12,3 +12,10 @@ __pycache__/
 # OS files
 .DS_Store
 Thumbs.db
+
+ConvertFilenames.py
+Transcriber.py
+WordCounter.py
+OutputGenerator.py
+Preprocessor.py
+SetupChecker.py
