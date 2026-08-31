@@ -14,8 +14,4 @@ __pycache__/
 Thumbs.db
 
 ConvertFilenames.py
-Transcriber.py
-WordCounter.py
-OutputGenerator.py
-Preprocessor.py
-SetupChecker.py
+DoubleAudio.py
