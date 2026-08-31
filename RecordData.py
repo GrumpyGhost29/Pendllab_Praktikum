@@ -106,10 +106,8 @@ def save_transcript(filename, speaker_id, transcript):
 # RECORD TRAINING DATA
 
 def record_audio():
-    print()
     print("Recording...")
     print("Press ENTER when finished.")
-    print()
 
     recording = sd.InputStream(samplerate=SAMPLE_RATE, channels=CHANNELS, dtype="float32")
     chunks = []
@@ -171,14 +169,12 @@ def main():
         phrase = get_training_phrase()
 
         print()
-        print("--------------------------------")
         print()
+        print()
+        print("--------------------------------")
         print("READ:")
-        print()
         print(phrase)
-        print()
         print("--------------------------------")
-        print()
 
         command = input(
             "[ENTER] record | "
@@ -191,9 +187,6 @@ def main():
 
         if command == "s":
             continue
-
-        print()
-        print("Press ENTER after speaking.")
 
         time.sleep(0.3)
 
