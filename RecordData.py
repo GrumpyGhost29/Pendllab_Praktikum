@@ -14,7 +14,7 @@ BASE_DIR = Path(__file__).resolve().parent
 OUTPUT_DIR = BASE_DIR / "data" / "audio"
 CSV_FILE = BASE_DIR / "data" / "transcripts.csv"
 
-NUMBERS = ["zwei","drei","vier"]
+NUMBERS = ["zwei","drei","vier", "fünf", "sechs"]
 
 CATEGORIES = ["het", "ly", "mo", "eo", "ba", "ndb", "hettox", "hetstab", "hetmet", "lyklein",
               "lymittel", "lygross", "lymag", "moly"]
@@ -94,7 +94,7 @@ def prepare_directories():
 def get_next_filename():
     existing = list(OUTPUT_DIR.glob("recording_*.wav"))
     number = len(existing) + 1
-    return f"recording_{number}.wav"
+    return f"recording_{number:05d}.wav"
 
 
 def save_transcript(filename, speaker_id, transcript):
