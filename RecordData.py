@@ -24,7 +24,7 @@ CATEGORIES = ["het", "ly", "mo", "eo", "ba", "ndb", "hettox", "hetstab", "hetmet
 def generate_item():
     category = random.choice(CATEGORIES)
 
-    if random.random() < 0.40:
+    if random.random() < 0.20:
         number = random.choice(NUMBERS)
         return f"{number} {category}"
 
