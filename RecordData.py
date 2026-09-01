@@ -14,7 +14,7 @@ BASE_DIR = Path(__file__).resolve().parent
 OUTPUT_DIR = BASE_DIR / "data" / "audio"
 CSV_FILE = BASE_DIR / "data" / "transcripts.csv"
 
-NUMBERS = ["zwei","drei","vier", "fünf", "sechs"]
+NUMBERS = ["zwei","drei"]
 
 CATEGORIES = ["het", "ly", "mo", "eo", "ba", "ndb", "hettox", "hetstab", "hetmet", "lyklein",
               "lymittel", "lygross", "lymag", "moly"]
@@ -24,7 +24,7 @@ CATEGORIES = ["het", "ly", "mo", "eo", "ba", "ndb", "hettox", "hetstab", "hetmet
 def generate_item():
     category = random.choice(CATEGORIES)
 
-    if random.random() < 0.40:
+    if random.random() < 0.20:
         number = random.choice(NUMBERS)
         return f"{number} {category}"
 
@@ -41,37 +41,96 @@ def generate_phrase(min_items=5, max_items=15):
     return " ".join(items)
 
 
-# GENERATE CONFUSION PHRASE
+MO_FAMILY = [
+    "mo",
+    "moly",
+]
+
+LY_FAMILY = [
+    "ly",
+    "lyklein",
+    "lymittel",
+    "lygross",
+    "lymag",
+]
+
+HET_FAMILY = [
+    "het",
+    "hettox",
+    "hetstab",
+    "hetmet",
+]
+
+
+def generate_pair_patterns(group):
+    patterns = []
+
+    for first in group:
+        for second in group:
+
+            patterns.append([first, second])
+
+    return patterns
+
+
+def generate_cross_patterns(group_a, group_b):
+    patterns = []
+
+    for a in group_a:
+        for b in group_b:
+
+            patterns.extend([
+                [a, b],
+                [b, a],
+                [a, b, a],
+                [b, a, b],
+            ])
+
+    return patterns
+
+CONFUSION_PATTERNS = []
+
+# Within-family confusion
+CONFUSION_PATTERNS += generate_pair_patterns(HET_FAMILY)
+CONFUSION_PATTERNS += generate_pair_patterns(LY_FAMILY)
+CONFUSION_PATTERNS += generate_pair_patterns(MO_FAMILY)
+
+# Cross-family confusion
+CONFUSION_PATTERNS += generate_cross_patterns(
+    MO_FAMILY,
+    LY_FAMILY
+)
+
+# Especially important manually specified cases
+CONFUSION_PATTERNS += [
+    ["mo", "ly"],
+    ["moly"],
+
+    ["mo", "ly", "moly"],
+    ["moly", "mo", "ly"],
+
+    ["mo", "ly", "mo", "ly"],
+    ["moly", "moly"],
+
+    ["mo", "moly", "ly"],
+    ["ly", "mo", "moly"],
+]
+
 def generate_confusion_phrase():
-    patterns = [["mo", "ly"], ["moly"], ["mo", "moly"], ["moly", "mo"], ["ly", "moly"], ["moly", "ly"],
-                ["mo", "ly", "moly"], ["moly", "mo", "ly"], ["mo", "moly", "ly"], ["ly", "mo", "moly"],
-                ["moly", "moly"], ["mo", "ly", "mo", "ly"], ["het", "hettox"], ["hettox", "het"],
-                ["het", "hetstab"], ["hetstab", "het"], ["het", "hetmet"], ["hetmet", "het"],
-                ["hettox", "hetstab"], ["hetstab", "hettox"], ["hettox", "hetmet"], ["hetmet", "hettox"],
-                ["hetstab", "hetmet"], ["hetmet", "hetstab"], ["het", "hettox", "hetstab", "hetmet"],
-                ["hetmet", "hetstab", "hettox", "het"], ["het", "het", "hettox"], ["het", "hettox", "het"],
-                ["hettox", "het", "hettox"], ["het", "hetmet", "het"], ["hetmet", "het", "hetmet"],
-                ["het", "hetstab", "het"], ["hetstab", "het", "hetstab"], ["het", "het", "het"],
-                ["hettox", "hettox"], ["hetstab", "hetstab"], ["hetmet", "hetmet"], ["ly", "lyklein"],
-                ["lyklein", "ly"], ["ly", "lymittel"], ["lymittel", "ly"], ["ly", "lygross"],
-                ["lygross", "ly"], ["ly", "lymag"], ["lymag", "ly"], ["lyklein", "lymittel"],
-                ["lymittel", "lyklein"], ["lyklein", "lygross"], ["lygross", "lyklein"], ["lyklein", "lymag"],
-                ["lymag", "lyklein"], ["lymittel", "lygross"], ["lygross", "lymittel"], ["lymittel", "lymag"],
-                ["lymag", "lymittel"], ["lygross", "lymag"], ["lymag", "lygross"],
-                ["ly", "lyklein", "lymittel"], ["ly", "lygross", "lymag"],
-                ["ly", "lyklein", "lymittel", "lygross", "lymag"],
-                ["lymag", "lygross", "lymittel", "lyklein", "ly"], ["ly", "ly", "lyklein"],
-                ["ly", "lyklein", "ly"], ["lyklein", "ly", "lyklein"], ["ly", "lymittel", "ly"],
-                ["lymittel", "ly", "lymittel"], ["ly", "lygross", "ly"], ["lygross", "ly", "lygross"],
-                ["ly", "lymag", "ly"], ["lymag", "ly", "lymag"], ["ly", "ly"], ["lyklein", "lyklein"],
-                ["lymittel", "lymittel"], ["lygross", "lygross"], ["lymag", "lymag"]]
 
-    special = random.choice(patterns)
-    before = [generate_item() for _ in range(random.randint(1, 4))]
-    after = [generate_item() for _ in range(random.randint(1, 4))]
-    sequence = before + special + after
+    special = random.choice(CONFUSION_PATTERNS)
 
-    return " ".join(sequence)
+    before = [
+        generate_item()
+        for _ in range(random.randint(1, 3))
+    ]
+
+    after = [
+        generate_item()
+        for _ in range(random.randint(1, 3))
+    ]
+
+    return " ".join(before + special + after)
 
 
 def get_training_phrase():
