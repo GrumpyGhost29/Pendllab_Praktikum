@@ -14,7 +14,7 @@ BASE_DIR = Path(__file__).resolve().parent
 OUTPUT_DIR = BASE_DIR / "data" / "audio"
 CSV_FILE = BASE_DIR / "data" / "transcripts.csv"
 
-NUMBERS = ["zwei","drei"]
+NUMBERS = ["zwei","drei", "vier", "fünf"]
 
 CATEGORIES = ["het", "ly", "mo", "eo", "ba", "ndb", "hettox", "hetstab", "hetmet", "lyklein",
               "lymittel", "lygross", "lymag", "moly"]
@@ -24,7 +24,7 @@ CATEGORIES = ["het", "ly", "mo", "eo", "ba", "ndb", "hettox", "hetstab", "hetmet
 def generate_item():
     category = random.choice(CATEGORIES)
 
-    if random.random() < 0.20:
+    if random.random() < 0.40:
         number = random.choice(NUMBERS)
         return f"{number} {category}"
 
