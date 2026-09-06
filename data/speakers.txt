@@ -1,2 +1,5 @@
-speaker_1 - ed
-speaker_2 - an
+speaker_1 - edda pendl
+speaker_2 - annika pandl
+speaker_3 - gunther pendl
+speaker_4 - erik pendl
+speaker_5 - helene pendl
