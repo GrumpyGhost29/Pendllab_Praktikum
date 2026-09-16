@@ -15,3 +15,7 @@ Thumbs.db
 
 ConvertFilenames.py
 DoubleTranscript.py
+WhisperBaseline.py
+Vocabulary.py
+Dataset.py
+.data/results/

@@ -1,7 +1,6 @@
-ENTER YOUR SPEAKER DESIGNATION
+ENTER YOUR SPEAKER DESIGNATION, NO NEED TO ADD A NAME, THIS IS JUST TO MAKE SURE SPEAKERS DON'T OVERLAP.
 
-speaker_1 - edda pendl
-speaker_2 - annika pandl
-speaker_3 - gunther pendl
-speaker_4 - helene pendl
-speaker_5 - erik pendl
+speaker_1
+speaker_2
+speaker_3
+speaker_4
