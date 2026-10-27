@@ -1,4 +1,0 @@
-timestamp,model,files,reference_tokens,errors,ter
-2026-09-16T13:21:10,whisper_large-v3,1029,11264,2138,0.18980823863636365
-timestamp,model,files,reference_tokens,errors,ter
-2026-09-16T13:43:51,whisper_large-v3,1029,11264,1901,0.16876775568181818
