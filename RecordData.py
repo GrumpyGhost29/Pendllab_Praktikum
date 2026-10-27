@@ -12,8 +12,8 @@ SAMPLE_RATE = 16000
 CHANNELS = 1
 BASE_DIR = Path(__file__).resolve().parent
 
-OUTPUT_DIR = BASE_DIR / "small_dataset" / "audio_test"
-CSV_FILE = BASE_DIR / "small_dataset" / "transcripts_test.csv"
+OUTPUT_DIR = BASE_DIR / "small_dataset" / "audio_debug"
+CSV_FILE = BASE_DIR / "small_dataset" / "metadata_debug.csv"
 
 # MAKE SURE DIRECTORIES AND FILES EXIST
 def prepare_directories():
