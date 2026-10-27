@@ -15,5 +15,5 @@ Thumbs.db
 
 ConvertFilenames.py
 DoubleTranscript.py
-.data/audio_test/
-.data/transcripts_test.csv
+/data/transcripts_test.csv
+/data/audio_test/

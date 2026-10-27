@@ -8,39 +8,59 @@ from faster_whisper import WhisperModel
 from rapidfuzz.distance import Levenshtein
 from datetime import datetime
 
+from torch.fx.experimental import normalize
+
 BASE_DIR = Path(__file__).resolve().parent
 CSV_FILE = BASE_DIR / "data" / "transcripts.csv"
 AUDIO_DIR = BASE_DIR / "data" / "audio"
 
 PERFORMANCE_FILE = BASE_DIR / "data" / "results" / "model_performance.csv"
 MODEL_SIZE = "large-v3"
+NORMALIZER_VERSION = "1_1_0"
 
-OUTPUT_FILE = BASE_DIR / "data" / "results" / f"whisper_{MODEL_SIZE}.csv"
+OUTPUT_FILE = BASE_DIR / "data" / "results" / f"whisper_{MODEL_SIZE}_{NORMALIZER_VERSION}.csv"
 
+print(f"loading model...")
 model = WhisperModel(MODEL_SIZE, device="cuda", compute_type="float16")
+print(f"loaded model {MODEL_SIZE} with normalizer {NORMALIZER_VERSION}")
 
 def normalize_text(text : str) -> str:
     text = text.lower()
     text = re.sub(r"[^\wäöüß]+", " ", text)
+    text = re.sub(r"oo+", "o", text)
     text = re.sub(r"ß", "ss", text)
-    text = re.sub(r"gros", "gross", text)
 
-    text = re.sub(r"(lu|lü|lüh|lüge|li)","ly", text)
-    text = re.sub(r"(mark|marc|mak|mac)","mag", text)
-    text = re.sub(r"(mat|matt|mett)","met", text)
-    text = re.sub(r"bar", "ba", text)
-    text = re.sub(r"ewe", "eo", text)
+    text = re.sub(r"(kros|(?!g)ros)\b", "gros", text)
+    text = re.sub(r"gros(?!s)", "gross", text)
+    text = re.sub(r"(starb|start|starp)\b", "stab", text)
+    text = re.sub(r"ss+", "ss", text)
+    text = re.sub(r"mm+", "m", text)
 
-    text = re.sub(r"(toks|tocks|talks|hox)","tox", text)
+    text = re.sub(r"\b(lu|lü|lüh|lüge|li|lyh|lyg(?!ross)|lg|le)","ly", text)
+    text = re.sub(r"(glein|gelein|clyne|clyn|klyin)\b", "klein", text)
+
+    text = re.sub(r"\b(mu+|moe|moor|mon)\b", "mo", text)
+
+    text = re.sub(r"(mark|marc|mak|mac|magh|merg|magk)\b","mag", text)
+
+    text = re.sub(r"(mat|mät)\b", "met", text)
+    text = re.sub(r"mett+\b","met", text)
+
+    text = re.sub(r"\b(bar|pa)\b", "ba", text)
+
+    text = re.sub(r"\b(ewe|ew|eu|er)\b", "eo", text)
+
+    text = re.sub(r"(toks|tocks|tocs|top|talks|hox|dox|doks|docs|docks)\b","tox", text)
     text = re.sub(r"\box", "tox", text)
 
-    text = re.sub(r"(hätt|hät|hat|hand|head|hed|hett)","het", text)
+    text = re.sub(r"\b(hät|hat|ha|hete|hand|head|hed|had|hetge|ket)","het", text)
+    text = re.sub(r"hett+", "het", text)
 
-    text = re.sub(r"n d b", "ndb", text)
+    text = re.sub(r"\b(n d b|andb)\b", "ndb", text)
 
     text = re.sub(r"2", "zwei", text)
     text = re.sub(r"3", "drei", text)
-    text = re.sub(r"4", "vier", text)
+    text = re.sub(r"(4|\bfir\b)", "vier", text)
     text = re.sub(r"5", "fünf", text)
     text = re.sub(r"6", "sechs", text)
     text = re.sub(r"7", "sieben", text)
@@ -88,7 +108,7 @@ for index, row in enumerate(references, start=1):
         print(f"[{index}/{len(references)}] {filename}")
 
         segments, info = model.transcribe(str(audio_path), language="de", task="transcribe",
-                                          beam_size=5, condition_on_previous_text=False,)
+                                          beam_size=5, condition_on_previous_text=False)
 
         raw_text = " ".join(segment.text.strip() for segment in segments).lower()
         rawerrors, rawtokens = get_metrics(reference, raw_text)
@@ -116,7 +136,7 @@ with open(OUTPUT_FILE, "w", newline="", encoding="ISO-8859-1") as f:
 overall_ter = total_errors / total_reference_tokens
 
 performance_row = {"timestamp": datetime.now().isoformat(timespec="seconds"),
-                   "model": f"whisper_{MODEL_SIZE}", "files": len(results),
+                   "model": f"whisper_{MODEL_SIZE}_{NORMALIZER_VERSION}", "files": len(results),
                    "reference_tokens": total_reference_tokens, "errors": total_errors,
                    "ter": overall_ter,}
 
