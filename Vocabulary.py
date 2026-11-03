@@ -1,7 +1,5 @@
-TOKENS = ["<blank>",
-          "zwei", "drei", "vier", "fünf",
-          "eo", "ba", "ndb",
-          "het", "hettox", "hetstab", "hetmet",
+TOKENS = ["<blank>", "zwei", "drei", "vier", "fünf",
+          "eo", "ba", "ndb", "het", "hettox", "hetstab", "hetmet",
           "moly", "mo", "ly", "lyklein", "lymittel", "lygross", "lymag"]
 
 token_to_id = {token: i for i, token in enumerate(TOKENS)}
