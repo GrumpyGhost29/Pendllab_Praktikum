@@ -9,7 +9,7 @@ import torch
 from pathlib import Path
 from jiwer import wer, cer
 
-from Levenshtein_Preprocessing import normalize_text
+from whisper_evaluation.Levenshtein_Preprocessing import normalize_text
 
 BASE_DIR = Path(__file__).resolve().parent
 DATA_DIR = BASE_DIR / "small_dataset"
