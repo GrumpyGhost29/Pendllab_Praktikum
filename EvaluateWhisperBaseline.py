@@ -1,3 +1,5 @@
+# -*- coding: iso-8859-1 -*-
+
 import gc
 import time
 import whisper
@@ -7,7 +9,7 @@ import torch
 from pathlib import Path
 from jiwer import wer, cer
 
-from Preprocessing import normalize_text
+from Levenshtein_Preprocessing import normalize_text
 
 BASE_DIR = Path(__file__).resolve().parent
 DATA_DIR = BASE_DIR / "small_dataset"
@@ -20,7 +22,8 @@ OUTPUT_DIR = DATA_DIR / "results"
 
 DEVICE = "cuda" if torch.cuda.is_available() else "cpu"
 
-MODELS = ["tiny"]
+MODELS = ["tiny", "base", "small", "medium", "large", "turbo"]
+MODEL_COMPARISON_COLUMNS = []
 
 MODEL_RESULT_COLUMNS = ["audiofile", "WER", "CER", "RTF", "duration", "elapsed", "target", "result"]
 MODEL_COMPARISON_COLUMNS = ["model", "WER", "CER", "RTF"]
@@ -79,7 +82,7 @@ def evaluate_model(model_name, test_df):
 
         for index, row in test_df.iterrows():
             audio_name = str(row["file"])
-            target = normalize_text(str(row["text"]))
+            target = str(row["text"])
 
             if audio_name in completed:
                 continue
