@@ -1,3 +1,5 @@
+# -*- coding: iso-8859-1 -*-
+
 import csv
 import time
 from pathlib import Path

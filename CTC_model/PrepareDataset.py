@@ -1,3 +1,4 @@
+# -*- coding: iso-8859-1 -*-
 import csv
 from pathlib import Path
 
@@ -61,7 +62,7 @@ class SpeechDataset(Dataset):
         # TRANSFORM TO LOG-MEL SPECTROGRAM
         mel = mel_transform(waveform)
         mel = torch.log(mel + 1e-6)
-        mel = mel.squeeze(0)
+        mel = mel.squeeze(0).transpose(0, 1)
 
         # NORMALIZATION
         mel = (mel - mel.mean()) / (mel.std() + 1e-6)
@@ -86,7 +87,7 @@ def collate_fn(batch):
     # COLLECT DATA
     for item in batch:
         # TRANSPOSE MEL ENTRIES FOR CONVENIENCE
-        mel = item["mel"].transpose(0, 1)
+        mel = item["mel"]
 
         mels.append(mel)
         targets.append(item["target"])
@@ -97,7 +98,7 @@ def collate_fn(batch):
         filenames.append(item["file"])
 
     # PAD MELS ALONG TIME AXIS
-    mels = pad_sequence(mels, batch_first=True)
+    mels = pad_sequence(mels, batch_first=False)
 
     # CONCATENATE TARGETS (WE CAN DO THIS BECAUSE WE SUPPLY CTC WITH TARGET LENGTHS)
     targets = torch.cat(targets)

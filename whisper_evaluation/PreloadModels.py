@@ -1,3 +1,4 @@
+# -*- coding: iso-8859-1 -*-
 #Run this file a couple of times if you see any whisper checksum errors until no more errors are thrown
 import torch
 import whisper

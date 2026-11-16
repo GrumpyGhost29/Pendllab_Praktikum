@@ -1,3 +1,4 @@
+# -*- coding: iso-8859-1 -*-
 import random
 
 # COMMAND SET
@@ -5,7 +6,7 @@ COMMANDS = ["het", "ly", "mo", "eo", "ba", "ndb", "hettox", "hetstab", "hetmet",
             "lyklein", "lymittel", "lygross", "lymag", "moly"]
 
 # NUMBER SET
-NUMBERS = ["zwei", "drei", "vier", "f\u00fcnf"]
+NUMBERS = ["zwei", "drei", "vier", "fünf"]
 
 # HELPER FUNCTION TO GENERATE NORMAL COMMAND
 def generate_item():
