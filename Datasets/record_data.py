@@ -7,7 +7,7 @@ import sounddevice as sd
 import soundfile as sf
 import numpy as np
 
-from Datasets.GenerateScript import get_script
+from datasets.generate_script import get_script
 
 # CONFIG
 SAMPLE_RATE = 16000

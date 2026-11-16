@@ -2,16 +2,14 @@
 import torch
 import torch.nn as nn
 from torch.nn.utils.rnn import (pack_padded_sequence, pad_packed_sequence)
-from Vocabulary import TOKENS
+from vocabulary import TOKENS
 
-class PendlLabModel(nn.Module):
+class BasicCTCModel(nn.Module):
     def __init__(self, n_mels=80, hidden_size=128, num_layers=2):
         super().__init__()
 
         # GRU neural network to include data from previous frames in prediction
         self.gru = nn.GRU( input_size=n_mels, hidden_size=hidden_size, num_layers=num_layers,
-            # Batch first true because of our PrepareDataset output shape
-            batch_first=True,
             # Unidirectional because we need real time decoding later. True would likely produce
             # better results on prerecorded data.
             bidirectional=False,
@@ -25,14 +23,14 @@ class PendlLabModel(nn.Module):
     def forward(self, mels, input_lengths=None, hidden=None):
         if input_lengths is not None:
             # Ignore padding in sequences
-            packed = pack_padded_sequence(mels, input_lengths.cpu(), batch_first=True, enforce_sorted=False)
+            packed = pack_padded_sequence(mels, input_lengths.cpu())
 
             # Run through NN
             packed_output, hidden = self.gru(packed, hidden)
 
             # Repad sequence
             # _ is the Python coding convention for variable that won't be used.
-            x, _ = pad_packed_sequence(packed_output, batch_first=True, total_length=mels.size(1))
+            x, _ = pad_packed_sequence(packed_output, total_length=mels.size(1))
         else:
             # For real time processing
             x, hidden = self.gru(mels, hidden)

@@ -1,6 +1,5 @@
 # -*- coding: iso-8859-1 -*-
-
-from whisper_evaluation.Regex_Preprocessing import correct_numbers, remove_punctuation
+from preprocessing_regex import correct_numbers, remove_punctuation
 from rapidfuzz.distance import Levenshtein
 import re
 

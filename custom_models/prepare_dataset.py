@@ -7,29 +7,30 @@ import torchaudio
 from torch.nn.utils.rnn import pad_sequence
 from torch.utils.data import Dataset
 
-from CTC_model.Vocabulary import token_to_id
+from custom_models.vocabulary import token_to_id
 
-# CONFIG
+# Audio data config
 SAMPLE_RATE = 16000
 N_FFT = 400
 WINDOW_LENGTH = 400
 HOP_LENGTH = 160
 N_MELS = 80
 
-# SPECTROGRAM TRANSFORMER
+# spectrogram transformer
 mel_transform = torchaudio.transforms.MelSpectrogram(sample_rate=SAMPLE_RATE, n_fft=N_FFT, win_length=WINDOW_LENGTH, hop_length=HOP_LENGTH, n_mels=N_MELS)
 
-# DATASET CLASS
 class SpeechDataset(Dataset):
     def __init__(self, csv_path, audio_directory, speakers=None):
         self.audio_directory = Path(audio_directory)
+
+        # sample collector list
         self.samples = []
 
-        # LOAD SAMPLES FROM CSV FILE
+        # Load samples form csv
         with open(csv_path, "r", encoding="utf-8") as f:
             reader = csv.DictReader(f)
             for row in reader:
-                # IF SPEAKER LIST IS GIVEN, SKIP ENTRIES NOT ON THE LIST
+                # Skip speakers not on speaker list
                 if speakers is not None:
                     if row["speaker"] not in speakers:
                         continue
@@ -45,37 +46,46 @@ class SpeechDataset(Dataset):
     def __len__(self):
         return len(self.samples)
 
-    # LOAD AUDIO FROM INDEX
+    # load mel spectrogram from audio sample at index from samples list
     def __getitem__(self, index):
         sample = self.samples[index]
         audio_path = (self.audio_directory/sample["file"])
         waveform, sample_rate = torchaudio.load(audio_path)
 
-        # CONVERT TO MONO IF NECESSARY
+        # convert to mono
         if waveform.shape[0] > 1:
             waveform = waveform.mean(dim=0, keepdim=True)
 
-        # RESAMPLE IF NECESSARY
+        # resample
         if sample_rate != SAMPLE_RATE:
             waveform = torchaudio.functional.resample(waveform, sample_rate, SAMPLE_RATE)
 
-        # TRANSFORM TO LOG-MEL SPECTROGRAM
+        # transform to log-mel spectrogram
         mel = mel_transform(waveform)
         mel = torch.log(mel + 1e-6)
         mel = mel.squeeze(0).transpose(0, 1)
 
-        # NORMALIZATION
+        # normalize
         mel = (mel - mel.mean()) / (mel.std() + 1e-6)
 
-        # LOAD TARGET PHRASE
+        # load target phrase
         words = sample["text"].split()
         target = torch.tensor([token_to_id[word] for word in words], dtype=torch.long)
 
+        repeats = (target[1:] == target[:-1]).sum().item()
+        minimum_frames = len(target) + repeats
+
+        if mel.shape[0] < minimum_frames:
+            raise ValueError(f"Audio too short for CTC target: {sample['file']}")
+
         return {"mel": mel, "target": target, "text": sample["text"], "speaker": sample["speaker"], "file": sample["file"]}
 
-# NORMALIZE FULL SET
+# Normalize and organize Batches
 def collate_fn(batch):
-    # COLLECTOR LISTS FOR PADDING
+    # Sort batch items by length
+    batch = sorted(batch, key=lambda x: x["mel"].shape[0], reverse=True)
+
+    # Output collector lists
     mels = []
     targets = []
     input_lengths = []
@@ -84,26 +94,29 @@ def collate_fn(batch):
     speakers = []
     filenames = []
 
-    # COLLECT DATA
+    # Fill collector lists from batch items
     for item in batch:
-        # TRANSPOSE MEL ENTRIES FOR CONVENIENCE
         mel = item["mel"]
-
         mels.append(mel)
-        targets.append(item["target"])
         input_lengths.append(mel.shape[0])
-        target_lengths.append(len(item["target"]))
+
+        target = item["target"]
+        targets.append(target)
+        target_lengths.append(len(target))
+
         texts.append(item["text"])
+
         speakers.append(item["speaker"])
+
         filenames.append(item["file"])
 
-    # PAD MELS ALONG TIME AXIS
-    mels = pad_sequence(mels, batch_first=False)
+    # Pad all mels
+    mels = pad_sequence(mels)
 
-    # CONCATENATE TARGETS (WE CAN DO THIS BECAUSE WE SUPPLY CTC WITH TARGET LENGTHS)
+    # Concatenate all targets (we can do this because we provide target lengths)
     targets = torch.cat(targets)
 
-    # TRANSFORM RELEVANT COLLECTORS INTO TENSORS
+    # Transform relevant outputs to tensors
     input_lengths = torch.tensor(input_lengths, dtype=torch.long)
     target_lengths = torch.tensor(target_lengths, dtype=torch.long)
 

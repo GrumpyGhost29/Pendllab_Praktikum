@@ -1,8 +1,6 @@
 # -*- coding: iso-8859-1 -*-
-
 import re
 import unicodedata
-
 
 def normalize_text(text):
     text = text.lower()

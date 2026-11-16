@@ -1,4 +1,5 @@
 # -*- coding: iso-8859-1 -*-
+#Run preload_models.py if you see and whisper checksum errors
 
 import gc
 import time
@@ -9,7 +10,7 @@ import torch
 from pathlib import Path
 from jiwer import wer, cer
 
-from whisper_evaluation.Levenshtein_Preprocessing import normalize_text
+from preprocessing_levenshtein import normalize_text
 
 BASE_DIR = Path(__file__).resolve().parent
 DATA_DIR = BASE_DIR / "small_dataset"
@@ -134,7 +135,7 @@ def evaluate_model(model_name, test_df):
 
 def save_overall_results(model_name, results_df, test_df):
     if results_df.empty:
-        print(f"No results for {model_name}")
+        print(f"No Results for {model_name}")
         return
 
     expected = set(test_df["file"].astype(str))
@@ -144,7 +145,7 @@ def save_overall_results(model_name, results_df, test_df):
 
     if missing:
         print(
-            f"Skipping overall results for {model_name}: "
+            f"Skipping overall Results for {model_name}: "
             f"{len(missing)} recordings missing."
         )
         return
@@ -198,8 +199,8 @@ def main():
             print(f"Failed model {model_name}: {e}")
 
     print("\nEvaluation complete!")
-    print(f"Overall results: {OUTPUT_FILE}")
-    print(f"Individual results: {OUTPUT_DIR}")
+    print(f"Overall Results: {OUTPUT_FILE}")
+    print(f"Individual Results: {OUTPUT_DIR}")
 
 
 if __name__ == "__main__":
