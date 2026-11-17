@@ -1,4 +1,4 @@
-# -*- coding: utf-8 -*-
+# -*- coding: iso-8859-1 -*-
 import csv
 import time
 from pathlib import Path
@@ -116,7 +116,7 @@ with torch.inference_mode():
             "substitutions": metrics.substitutions,
         })
 
-        with open(TRANSCRIPTS_CSV, "w", newline="", encoding="utf-8") as f:
+        with open(TRANSCRIPTS_CSV, "w", newline="", encoding="ISO-8859-1") as f:
             writer = csv.DictWriter(
                 f,
                 fieldnames=[
@@ -146,7 +146,7 @@ result = {
 }
 write_header = (not RESULTS_CSV.exists() or RESULTS_CSV.stat().st_size == 0)
 
-with open(RESULTS_CSV, "a", newline="", encoding="utf-8") as f:
+with open(RESULTS_CSV, "a", newline="", encoding="ISO-8859-1") as f:
     writer = csv.DictWriter(
         f,
         fieldnames=[

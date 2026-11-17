@@ -7,7 +7,7 @@ import torchaudio
 from torch.nn.utils.rnn import pad_sequence
 from torch.utils.data import Dataset
 
-from custom_models.vocabulary import token_to_id
+from vocabulary import TOKENS
 
 # Audio data config
 SAMPLE_RATE = 16000
@@ -19,6 +19,7 @@ N_MELS = 80
 # spectrogram transformer
 mel_transform = torchaudio.transforms.MelSpectrogram(sample_rate=SAMPLE_RATE, n_fft=N_FFT, win_length=WINDOW_LENGTH, hop_length=HOP_LENGTH, n_mels=N_MELS)
 
+token_to_id = {token:i for i, token in enumerate(TOKENS)}
 class SpeechDataset(Dataset):
     def __init__(self, csv_path, audio_directory, speakers=None):
         self.audio_directory = Path(audio_directory)
@@ -27,7 +28,7 @@ class SpeechDataset(Dataset):
         self.samples = []
 
         # Load samples form csv
-        with open(csv_path, "r", encoding="utf-8") as f:
+        with open(csv_path, "r", encoding="ISO-8859-1") as f:
             reader = csv.DictReader(f)
             for row in reader:
                 # Skip speakers not on speaker list

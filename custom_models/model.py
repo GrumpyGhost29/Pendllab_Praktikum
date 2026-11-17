@@ -30,7 +30,7 @@ class BasicCTCModel(nn.Module):
 
             # Repad sequence
             # _ is the Python coding convention for variable that won't be used.
-            x, _ = pad_packed_sequence(packed_output, total_length=mels.size(1))
+            x, _ = pad_packed_sequence(packed_output, total_length=mels.size(0))
         else:
             # For real time processing
             x, hidden = self.gru(mels, hidden)
