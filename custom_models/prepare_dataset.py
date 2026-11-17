@@ -38,6 +38,14 @@ class SpeechDataset(Dataset):
 
                 self.samples.append({"file": row["file"], "speaker": row["speaker"],"text": row["text"].lower().strip()})
 
+        # Remove missing files
+        original_count = len(self.samples)
+
+        self.samples = [sample for sample in self.samples if (Path(self.audio_directory) / sample["file"]).is_file()]
+
+        skipped = original_count - len(self.samples)
+        print(f"Skipped {skipped} missing audio files.")
+
         if speakers is not None:
             print(f"Loaded {len(self.samples)} recordings \nfrom {audio_directory} \nfor speakers {speakers}")
 
@@ -51,6 +59,7 @@ class SpeechDataset(Dataset):
     def __getitem__(self, index):
         sample = self.samples[index]
         audio_path = (self.audio_directory/sample["file"])
+
         waveform, sample_rate = torchaudio.load(audio_path)
 
         # convert to mono

@@ -69,9 +69,10 @@ best_val_loss = float("inf")
 epochs_without_improvement = 0
 
 for epoch in range(1, EPOCHS + 1):
+    print(f"Running next epoch")
     train_loss = run_epoch(train_loader, training=True)
     val_loss = run_epoch(val_loader, training=False)
-    print(f"Epoch {epoch:03d} | Train loss: {train_loss:.4f} | Val loss: {val_loss:.4f}\n")
+    print(f"\n\n\nEpoch {epoch:03d} | Train loss: {train_loss:.4f} | Val loss: {val_loss:.4f}")
 
     if val_loss < best_val_loss:
         best_val_loss = val_loss
@@ -81,6 +82,7 @@ for epoch in range(1, EPOCHS + 1):
 
     else:
         epochs_without_improvement += 1
+        print("---No improvement so far---")
 
         if epochs_without_improvement >= PATIENCE:
             print("Early stopping")

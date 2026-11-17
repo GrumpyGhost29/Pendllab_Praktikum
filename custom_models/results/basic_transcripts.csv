@@ -1,0 +1,105 @@
+filename,speaker,wer,exact accuracy,rtf,deletions,insertions,substitutions,target,result
+recording_00122.wav,speaker_1,0.0,1,0.012365704225390255,0,0,0,lygross lygross eo ndb moly lyklein lymittel ndb fünf ndb lymittel,lygross lygross eo ndb moly lyklein lymittel ndb fünf ndb lymittel
+recording_00890.wav,speaker_4,0.0,1,0.0039006101694628913,0,0,0,het hetmet hetstab lyklein lymag mo lyklein,het hetmet hetstab lyklein lymag mo lyklein
+recording_00658.wav,speaker_3,0.0,1,0.00390715511954935,0,0,0,vier hettox drei ly ly hetmet zwei hetstab lymittel het fünf ly lyklein zwei lymittel hetstab fünf ly eo mo eo,vier hettox drei ly ly hetmet zwei hetstab lymittel het fünf ly lyklein zwei lymittel hetstab fünf ly eo mo eo
+recording_00975.wav,speaker_4,0.0,1,0.003953587553400341,0,0,0,lymag drei lymag fünf ndb lymittel fünf het lymittel lymag het,lymag drei lymag fünf ndb lymittel fünf het lymittel lymag het
+recording_00692.wav,speaker_3,0.0,1,0.0033646661550056226,0,0,0,hetstab fünf hetmet ly moly zwei ly lyklein lygross zwei hettox lymittel ly moly lymag ba,hetstab fünf hetmet ly moly zwei ly lyklein lygross zwei hettox lymittel ly moly lymag ba
+recording_00271.wav,speaker_1,0.0,1,0.00409218710495267,0,0,0,drei lymittel hetstab mo lymag mo lymag hetstab ndb,drei lymittel hetstab mo lymag mo lymag hetstab ndb
+recording_00839.wav,speaker_3,0.0,1,0.0036521568625746525,0,0,0,zwei het lymittel lygross lymag,zwei het lymittel lygross lymag
+recording_00898.wav,speaker_4,0.0,1,0.00383890989294778,0,0,0,hettox lymittel lymag hetmet moly ba het,hettox lymittel lymag hetmet moly ba het
+recording_00478.wav,speaker_2,0.0,1,0.003773636363695498,0,0,0,zwei het hetmet ly mo moly lymittel,zwei het hetmet ly mo moly lymittel
+recording_00468.wav,speaker_2,0.0,1,0.00347015320332001,0,0,0,fünf lygross ndb mo hetstab hetstab het,fünf lygross ndb mo hetstab hetstab het
+recording_00748.wav,speaker_3,0.0,1,0.0036983788707523643,0,0,0,mo lyklein moly hetstab lygross mo,mo lyklein moly hetstab lygross mo
+recording_00969.wav,speaker_4,0.0,1,0.0035403370786931763,0,0,0,moly lygross lymittel ndb lymag ndb,moly lygross lymittel ndb lymag ndb
+recording_00258.wav,speaker_1,0.0,1,0.0036249999999597793,0,0,0,eo hetstab eo het lymag,eo hetstab eo het lymag
+recording_00835.wav,speaker_3,0.0,1,0.0038847012986586273,0,0,0,ba mo drei hetstab hetstab fünf hettox hetstab moly hettox lymittel lyklein fünf lymittel vier lygross het,ba mo drei hetstab hetstab fünf hettox hetstab moly hettox lymittel lyklein fünf lymittel vier lygross het
+recording_00002.wav,speaker_1,0.06666666666666667,0,0.0037969614035350866,1,0,0,lygross hetmet ly ndb drei lyklein eo hettox drei het lygross lygross zwei hettox ba,lygross hetmet ly ndb drei lyklein hettox drei het lygross lygross zwei hettox ba
+recording_00869.wav,speaker_4,0.0,1,0.0038977235773217686,0,0,0,moly lygross lymittel mo ndb,moly lygross lymittel mo ndb
+recording_00705.wav,speaker_3,0.0,1,0.004062200000043958,0,0,0,hetmet ndb hetmet ba ba eo,hetmet ndb hetmet ba ba eo
+recording_00741.wav,speaker_3,0.0,1,0.0035532356136159064,0,0,0,hettox lygross drei lygross ly moly moly ly zwei het lyklein,hettox lygross drei lygross ly moly moly ly zwei het lyklein
+recording_00191.wav,speaker_1,0.06666666666666667,0,0.003796176256298266,1,0,0,lymittel vier eo eo ba hettox zwei lymittel lyklein sechs lyklein mo fünf lymag ly,lymittel vier eo eo ba hettox zwei lymittel lyklein sechs lyklein mo fünf lymag
+recording_00789.wav,speaker_3,0.0,1,0.003818704940064158,0,0,0,hetmet lymittel moly hetmet hettox hetstab lyklein lygross,hetmet lymittel moly hetmet hettox hetstab lyklein lygross
+recording_00713.wav,speaker_3,0.16666666666666666,0,0.004009114877804136,1,0,0,hetstab lyklein hetstab mo ly het,hetstab lyklein hetstab mo het
+recording_00359.wav,speaker_2,0.0,1,0.00413614890875017,0,0,0,eo ndb ly ndb hetmet ndb fünf ly ba moly vier ba moly lymag ba ba ba,eo ndb ly ndb hetmet ndb fünf ly ba moly vier ba moly lymag ba ba ba
+recording_00106.wav,speaker_1,0.0,1,0.00397246959778492,0,0,0,lyklein sechs lymittel mo hetmet ly lyklein lymittel drei het lymag lyklein,lyklein sechs lymittel mo hetmet ly lyklein lymittel drei het lymag lyklein
+recording_00803.wav,speaker_3,0.0,1,0.003926817420417908,0,0,0,fünf lygross moly lymag drei ly zwei hetmet zwei lymag lymittel mo drei hetstab drei moly,fünf lygross moly lymag drei ly zwei hetmet zwei lymag lymittel mo drei hetstab drei moly
+recording_00851.wav,speaker_3,0.0,1,0.0037651515153369073,0,0,0,ly zwei hetstab moly lymag mo eo,ly zwei hetstab moly lymag mo eo
+recording_00445.wav,speaker_2,0.0,1,0.0035191338582539118,0,0,0,fünf mo lyklein moly ly,fünf mo lyklein moly ly
+recording_00454.wav,speaker_2,0.0,1,0.0035715739866681896,0,0,0,lyklein hettox lygross ba lymag lymag zwei lymag lyklein fünf lygross het,lyklein hettox lygross ba lymag lymag zwei lymag lyklein fünf lygross het
+recording_00881.wav,speaker_4,0.0,1,0.004157612704975541,0,0,0,lymag fünf eo hettox mo lymittel hetmet ndb,lymag fünf eo hettox mo lymittel hetmet ndb
+recording_00274.wav,speaker_1,0.14285714285714285,0,0.004210801186729726,1,0,0,eo eo moly hettox hetmet hettox het,eo eo moly hettox hetmet hettox
+recording_00503.wav,speaker_2,0.0,1,0.003748273561211315,0,0,0,het hetmet lygross fünf mo mo het fünf lyklein ndb moly fünf ly,het hetmet lygross fünf mo mo het fünf lyklein ndb moly fünf ly
+recording_01014.wav,speaker_4,0.0,1,0.0035150748299449435,0,0,0,ndb hetstab drei hetmet hettox zwei lyklein hettox,ndb hetstab drei hetmet hettox zwei lyklein hettox
+recording_00218.wav,speaker_1,0.0,1,0.0036239196940028705,0,0,0,drei lygross zwei hetstab drei mo eo zwei hetmet ndb zwei lymittel zwei lymag drei moly,drei lygross zwei hetstab drei mo eo zwei hetmet ndb zwei lymittel zwei lymag drei moly
+recording_00089.wav,speaker_1,0.0,1,0.0034650709018958694,0,0,0,moly eo fünf hetmet ly ly zwei lygross lygross drei lyklein zwei het drei hettox sechs hettox moly lymag hettox,moly eo fünf hetmet ly ly zwei lygross lygross drei lyklein zwei het drei hettox sechs hettox moly lymag hettox
+recording_00316.wav,speaker_1,0.0,1,0.0036870247933906333,0,0,0,eo mo lyklein moly lyklein het lyklein,eo mo lyklein moly lyklein het lyklein
+recording_00994.wav,speaker_4,0.0,1,0.003778426470596648,0,0,0,fünf het lymag mo ly moly hettox,fünf het lymag mo ly moly hettox
+recording_00044.wav,speaker_1,0.0,1,0.003568888286362323,0,0,0,vier het lygross drei ba ly eo ndb zwei lymag zwei hetstab hetmet vier lyklein lyklein vier het moly drei lymag,vier het lygross drei ba ly eo ndb zwei lymag zwei hetstab hetmet vier lyklein lyklein vier het moly drei lymag
+recording_00092.wav,speaker_1,0.0,1,0.0035354009077847447,0,0,0,moly zwei ndb mo hettox fünf lyklein het,moly zwei ndb mo hettox fünf lyklein het
+recording_00253.wav,speaker_1,0.0,1,0.00353259878421675,0,0,0,hettox ndb het hetstab lymittel ba lymittel,hettox ndb het hetstab lymittel ba lymittel
+recording_00242.wav,speaker_1,0.125,0,0.003947266314052537,1,0,0,drei ndb hettox eo lymittel moly lymittel het,drei ndb hettox eo lymittel moly lymittel
+recording_00309.wav,speaker_1,0.0,1,0.0035395225915693194,0,0,0,fünf eo eo moly ba hettox ndb hetmet ndb moly lymittel eo ndb eo,fünf eo eo moly ba hettox ndb hetmet ndb moly lymittel eo ndb eo
+recording_00718.wav,speaker_3,0.07142857142857142,0,0.00409096061471189,0,0,1,lymag ba het drei ndb eo lymittel fünf lyklein eo zwei hettox lymag hetstab,lymag ba het ba ndb eo lymittel fünf lyklein eo zwei hettox lymag hetstab
+recording_00749.wav,speaker_3,0.0,1,0.003399767054954506,0,0,0,mo drei ndb hetstab ba zwei ba lygross lymittel lymag het ba moly fünf hetmet het,mo drei ndb hetstab ba zwei ba lygross lymittel lymag het ba moly fünf hetmet het
+recording_00924.wav,speaker_4,0.0,1,0.004629379844926815,0,0,0,moly hetmet hetstab lymittel lymag ba ly hetstab,moly hetmet hetstab lymittel lymag ba ly hetstab
+recording_00845.wav,speaker_3,0.058823529411764705,0,0.003643290273565923,1,0,0,vier moly drei lygross moly vier eo ba zwei moly moly eo ly lymag lymittel lygross hetmet,vier moly drei lygross moly vier eo ba zwei moly eo ly lymag lymittel lygross hetmet
+recording_00582.wav,speaker_2,0.09090909090909091,0,0.004005584112270876,0,0,1,vier moly vier mo ba mo lyklein hetstab ndb drei lyklein,vier moly eo mo ba mo lyklein hetstab ndb drei lyklein
+recording_00049.wav,speaker_1,0.0,1,0.00356946127947913,0,0,0,lymittel lymag hetmet drei mo lyklein ndb zwei lymag het drei het hettox,lymittel lymag hetmet drei mo lyklein ndb zwei lymag het drei het hettox
+recording_00495.wav,speaker_2,0.0,1,0.003565031347876516,0,0,0,lyklein lygross moly lymag het ndb,lyklein lygross moly lymag het ndb
+recording_00939.wav,speaker_4,0.14285714285714285,0,0.003617981689554412,1,0,0,drei ly lygross lymag drei lymag lymag,drei ly lygross lymag drei lymag
+recording_00358.wav,speaker_2,0.0,1,0.003391935933145165,0,0,0,hetmet lymag lymag lymag lymittel hetmet ndb fünf lymittel lyklein ba hetstab,hetmet lymag lymag lymag lymittel hetmet ndb fünf lymittel lyklein ba hetstab
+recording_00323.wav,speaker_1,0.14285714285714285,0,0.005785966029919258,1,0,0,lymittel ndb fünf hettox lymittel lymag ly,lymittel ndb fünf hettox lymittel lymag
+recording_00782.wav,speaker_3,0.0,1,0.0035899901186452403,0,0,0,drei het het mo ndb lyklein mo zwei hetstab lymittel,drei het het mo ndb lyklein mo zwei hetstab lymittel
+recording_00416.wav,speaker_2,0.0,1,0.0036887334316386155,0,0,0,zwei mo hetstab mo zwei lymag moly,zwei mo hetstab mo zwei lymag moly
+recording_00691.wav,speaker_3,0.0,1,0.003558361381664326,0,0,0,lymag moly hetstab ba lymag ndb ly lymittel fünf ndb ndb ba,lymag moly hetstab ba lymag ndb ly lymittel fünf ndb ndb ba
+recording_00059.wav,speaker_1,0.0,1,0.003648978978905522,0,0,0,drei ba ly het drei het vier ndb het,drei ba ly het drei het vier ndb het
+recording_00802.wav,speaker_3,0.0,1,0.003874303405575891,0,0,0,mo moly mo het,mo moly mo het
+recording_00389.wav,speaker_2,0.0,1,0.0034583360656008574,0,0,0,hetstab eo hetstab hetstab ba drei ba ba het vier eo hetstab moly moly,hetstab eo hetstab hetstab ba drei ba ba het vier eo hetstab moly moly
+recording_01005.wav,speaker_4,0.3333333333333333,0,0.003530346584998754,1,0,1,ndb hetstab het hetstab het eo,ndb hetstab het hetstab ndb
+recording_00347.wav,speaker_1,0.0,1,0.0035814917126780785,0,0,0,ba hetstab hetmet moly,ba hetstab hetmet moly
+recording_00237.wav,speaker_1,0.16666666666666666,0,0.003899145728459344,1,0,0,het mo drei lymag mo hettox,het mo drei lymag mo
+recording_01007.wav,speaker_4,0.0,1,0.0034415962891833425,0,0,0,lymag drei lymag fünf hetmet zwei mo lygross ba drei lymag lygross fünf ba,lymag drei lymag fünf hetmet zwei mo lygross ba drei lymag lygross fünf ba
+recording_00461.wav,speaker_2,0.0,1,0.0037229770991836476,0,0,0,lymittel lyklein hetmet lyklein mo lyklein ndb lymittel drei hetstab,lymittel lyklein hetmet lyklein mo lyklein ndb lymittel drei hetstab
+recording_00759.wav,speaker_3,0.0,1,0.0034162343647418368,0,0,0,het het hettox lygross vier lymag moly ba mo fünf ba mo lygross vier ndb lygross eo eo,het het hettox lygross vier lymag moly ba mo fünf ba mo lygross vier ndb lygross eo eo
+recording_00411.wav,speaker_2,0.0,1,0.003663234200765759,0,0,0,hetstab hetstab zwei hetstab lygross moly lygross mo eo,hetstab hetstab zwei hetstab lygross moly lygross mo eo
+recording_00816.wav,speaker_3,0.0,1,0.0034995991777479582,0,0,0,drei eo ba hettox drei hettox lygross ba lymittel fünf hetmet vier moly,drei eo ba hettox drei hettox lygross ba lymittel fünf hetmet vier moly
+recording_00656.wav,speaker_3,0.0,1,0.003306371168176404,0,0,0,vier eo eo lyklein hettox eo moly ba hettox hetstab ba zwei hettox ly hetstab lymittel,vier eo eo lyklein hettox eo moly ba hettox hetstab ba zwei hettox ly hetstab lymittel
+recording_00452.wav,speaker_2,0.0,1,0.003286224627768963,0,0,0,vier ly lymittel mo lymittel vier hetstab lygross,vier ly lymittel mo lymittel vier hetstab lygross
+recording_00967.wav,speaker_4,0.14285714285714285,0,0.003459723007299395,0,1,0,lyklein mo lygross mo zwei het moly,het lyklein mo lygross mo zwei het moly
+recording_00307.wav,speaker_1,0.09090909090909091,0,0.003475091863536869,1,0,0,hetmet lymag drei moly ndb eo hetmet drei ndb hetstab het,hetmet lymag drei moly ndb eo hetmet drei ndb hetstab
+recording_00190.wav,speaker_1,0.07692307692307693,0,0.004682441634169437,0,0,1,zwei moly zwei het ba fünf mo vier ba moly hetstab zwei lyklein,zwei moly zwei het ba fünf mo eo ba moly hetstab zwei lyklein
+recording_00731.wav,speaker_3,0.0,1,0.004688499157024374,0,0,0,moly ndb hetstab hetstab hetstab eo eo,moly ndb hetstab hetstab hetstab eo eo
+recording_00252.wav,speaker_1,0.0,1,0.0033694342762135366,0,0,0,ba drei ndb zwei mo het lymag ndb lymag ly hettox zwei hettox ndb hetmet lygross ba,ba drei ndb zwei mo het lymag ndb lymag ly hettox zwei hettox ndb hetmet lygross ba
+recording_00107.wav,speaker_1,0.0,1,0.003544223669987934,0,0,0,lyklein fünf hetmet moly hettox lygross eo moly lymag drei mo,lyklein fünf hetmet moly hettox lygross eo moly lymag drei mo
+recording_00855.wav,speaker_3,0.0,1,0.003484608695662641,0,0,0,ly lyklein mo lyklein hetmet ndb hetstab,ly lyklein mo lyklein hetmet ndb hetstab
+recording_00533.wav,speaker_2,0.2,0,0.003471482142621036,0,0,1,hetstab ndb hetmet ba lygross,het ndb hetmet ba lygross
+recording_00439.wav,speaker_2,0.0,1,0.003494784768376097,0,0,0,ly moly lymag vier ndb eo,ly moly lymag vier ndb eo
+recording_00760.wav,speaker_3,0.0,1,0.004263896515395075,0,0,0,lyklein vier lygross drei ba moly lymittel drei hetstab zwei lymag,lyklein vier lygross drei ba moly lymittel drei hetstab zwei lymag
+recording_00277.wav,speaker_1,0.0,1,0.003630515624877262,0,0,0,ndb lygross mo lygross lymag ndb,ndb lygross mo lygross lymag ndb
+recording_00541.wav,speaker_2,0.0,1,0.00348287037047191,0,0,0,hetstab mo ly moly ndb ba,hetstab mo ly moly ndb ba
+recording_00349.wav,speaker_1,0.0,1,0.003551840000000084,0,0,0,mo ly mo ly eo ly,mo ly mo ly eo ly
+recording_00462.wav,speaker_2,0.0,1,0.003726941514781742,0,0,0,vier hetmet ba het lyklein ndb vier ly zwei lygross eo lymittel,vier hetmet ba het lyklein ndb vier ly zwei lygross eo lymittel
+recording_00900.wav,speaker_4,0.0,1,0.003430938578283159,0,0,0,drei ba hetstab eo lymittel ndb fünf hetmet ndb hetmet,drei ba hetstab eo lymittel ndb fünf hetmet ndb hetmet
+recording_00400.wav,speaker_2,0.0,1,0.0034918549745715645,0,0,0,mo hetstab lygross hettox mo,mo hetstab lygross hettox mo
+recording_00236.wav,speaker_1,0.0,1,0.003443889789260823,0,0,0,ndb zwei moly lyklein mo lyklein mo hetmet,ndb zwei moly lyklein mo lyklein mo hetmet
+recording_00557.wav,speaker_2,0.0,1,0.0034087445888100333,0,0,0,lyklein zwei ly vier lymag het eo zwei ndb ba lymittel zwei lymittel het,lyklein zwei ly vier lymag het eo zwei ndb ba lymittel zwei lymittel het
+recording_00864.wav,speaker_4,0.0,1,0.0037551895307934577,0,0,0,mo mo lymag mo lymag drei lymittel hetstab,mo mo lymag mo lymag drei lymittel hetstab
+recording_00162.wav,speaker_1,0.0,1,0.003468651226156281,0,0,0,hettox zwei hetmet lyklein lygross hetstab ndb ba,hettox zwei hetmet lyklein lygross hetstab ndb ba
+recording_00135.wav,speaker_1,0.0,1,0.003677221702520563,0,0,0,lymag zwei hetstab hettox ndb eo zwei ba ly lymittel,lymag zwei hetstab hettox ndb eo zwei ba ly lymittel
+recording_00188.wav,speaker_1,0.0,1,0.0036459634703869476,0,0,0,hetstab sechs het drei lyklein zwei hetmet het drei hetstab sechs eo eo lymittel,hetstab sechs het drei lyklein zwei hetmet het drei hetstab sechs eo eo lymittel
+recording_00539.wav,speaker_2,0.0,1,0.0037317503586876137,0,0,0,hettox lyklein mo lyklein het ly zwei hettox,hettox lyklein mo lyklein het ly zwei hettox
+recording_00407.wav,speaker_2,0.0,1,0.00408841483959984,0,0,0,vier lyklein lyklein moly lygross lymittel,vier lyklein lyklein moly lygross lymittel
+recording_00734.wav,speaker_3,0.0,1,0.004140499286728616,0,0,0,hetstab moly zwei lyklein ly eo moly hetstab moly drei eo het mo vier het zwei ndb lygross hetmet,hetstab moly zwei lyklein ly eo moly hetstab moly drei eo het mo vier het zwei ndb lygross hetmet
+recording_00820.wav,speaker_3,0.0,1,0.0038537142855992507,0,0,0,hettox fünf het lyklein ba ba lyklein hettox lygross,hettox fünf het lyklein ba ba lyklein hettox lygross
+recording_00072.wav,speaker_1,0.0,1,0.0036361241609178642,0,0,0,het ba mo ba ly,het ba mo ba ly
+recording_00963.wav,speaker_4,0.0,1,0.0034661152309651963,0,0,0,lygross lymag ly moly,lygross lymag ly moly
+recording_00264.wav,speaker_1,0.0,1,0.003914061135338674,0,0,0,hetmet hetmet lymittel hettox drei hettox lymittel moly hetmet zwei lymag ba mo,hetmet hetmet lymittel hettox drei hettox lymittel moly hetmet zwei lymag ba mo
+recording_00874.wav,speaker_4,0.0,1,0.003790542427533103,0,0,0,hetmet vier moly fünf ndb lyklein moly lymag drei ly eo vier mo ly zwei moly lyklein zwei mo,hetmet vier moly fünf ndb lyklein moly lymag drei ly eo vier mo ly zwei moly lyklein zwei mo
+recording_00265.wav,speaker_1,0.14285714285714285,0,0.003668003384130865,1,0,0,lymittel mo ly lymittel het hettox lygross,lymittel mo ly lymittel het hettox
+recording_00294.wav,speaker_1,0.0,1,0.0037780296425421887,0,0,0,lyklein hetstab moly ly ly het lymittel ba eo hettox ndb eo drei hetmet,lyklein hetstab moly ly ly het lymittel ba eo hettox ndb eo drei hetmet
+recording_00496.wav,speaker_2,0.0,1,0.004004441776740815,0,0,0,mo lyklein hetstab drei lymag ly moly fünf lygross,mo lyklein hetstab drei lymag ly moly fünf lygross
+recording_00543.wav,speaker_2,0.0,1,0.003384869564995271,0,0,0,hetstab ly fünf moly ly hetstab,hetstab ly fünf moly ly hetstab
+recording_00406.wav,speaker_2,0.0,1,0.003455875000213382,0,0,0,ba ly mo lyklein mo ba hetstab,ba ly mo lyklein mo ba hetstab
+recording_00022.wav,speaker_1,0.14285714285714285,0,0.003354180138532944,1,0,0,lymittel eo mo vier lygross mo eo,lymittel mo vier lygross mo eo
+recording_00206.wav,speaker_1,0.0,1,0.0036287154150047604,0,0,0,drei lygross moly drei lyklein ly lymag hetstab drei lygross ndb zwei mo,drei lygross moly drei lyklein ly lymag hetstab drei lygross ndb zwei mo
+recording_00841.wav,speaker_3,0.0,1,0.003645912596378607,0,0,0,vier hettox ly mo ly hetmet lyklein hetmet,vier hettox ly mo ly hetmet lyklein hetmet

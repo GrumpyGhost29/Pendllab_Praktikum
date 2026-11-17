@@ -114,6 +114,8 @@ with torch.inference_mode():
             "deletions": metrics.deletions,
             "insertions": metrics.insertions,
             "substitutions": metrics.substitutions,
+            "target": reference_text,
+            "result": predicted_text,
         })
 
         with open(TRANSCRIPTS_CSV, "w", newline="", encoding="ISO-8859-1") as f:
@@ -128,6 +130,8 @@ with torch.inference_mode():
                     "deletions",
                     "insertions",
                     "substitutions",
+                    "target",
+                    "result",
                 ]
             )
             writer.writeheader()

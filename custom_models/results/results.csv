@@ -1,0 +1,2 @@
+model,total wer,total exact accuracy,total rtf,transcript file
+BasicCTCModel,0.01825168107588857,0.8269230769230769,0.0038516994723145656,basic_transcripts.csv
